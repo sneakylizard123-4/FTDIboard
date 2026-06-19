@@ -1,0 +1,89 @@
+# KiCad
+# Schematic and PCB files
+*.kicad_sch
+*.kicad_pcb
+# 3D models
+*.step
+*.stp
+*.stl
+*.wrl
+*.x3d
+*.x3dz
+*.vrml
+# Manufacturing output
+*.gerber
+*.gbr
+*.drl
+*.txt
+*.pos
+*.csv
+*.xml
+# Netlist files
+*.net
+# Cache files
+*-cache.lib
+*-rescue.lib
+*-backup.*
+# KiCad 6
+*/**/fp-info-cache
+*/**/fp-info-table
+# KiCad 5 and earlier
+*-cache.lib
+*-rescue.lib
+*-backup.*
+# KiCad 3D viewer
+3dmodels/*.wrl
+3dmodels/*.step
+3dmodels/*.stp
+3dmodels/*.stl
+# Simulation
+*.csv
+# Temporary files
+*.bak
+*.tmp
+# OS-specific
+.DS_Store
+Thumbs.db
+# KiCad project files (optional, but often ignored)
+*.kicad_pro
+# User-specific settings
+*-user.kicad_pro
+# KiCad 5 and earlier project files
+*.pro
+# Netlist files (alternative extension)
+*.net
+# BOM files
+*.xml
+# Pick and place
+*.pos
+# Drill files
+*.drl
+# Gerber files (alternative extensions)
+*.gbr
+*.gbrjob
+# 3D model files (alternative extensions)
+*.step
+*.stp
+*.stl
+*.wrl
+*.x3d
+*.x3dz
+*.vrml
+# Simulation results
+*.csv
+# Temporary and backup files
+*.bak
+*.tmp
+*-backup.*
+*-rescue.lib
+*-cache.lib
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*~
+# KiCad 6 specific
+**/fp-info-cache
+**/fp-info-table
+
+*.lck
