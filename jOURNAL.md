@@ -1,21 +1,23 @@
-# FTDI Board — Journal Export
+---
+title: "FTDI Board"
+author: pn2222a
+descrriptioni: "FTDI USB board based on FT232RL chip"
+created_at: "2026-06-21T02:59:14Z"
+---
 
-- Exported at: 2026-06-22T04:04:22Z
-- Project ID: 4701
-- Entries: 1
 
-## Entry 1
-- ID: 15913
-- Author: pn2222a
-- Created At: 2026-06-21T02:59:14Z
 
-### Content
+# June 20: finished board
 
 finished the board.
 added moon silkscreen and some more easter eggs, even though it will probably be only me that uses it
-![art002e009281~large.jpg](/user-attachments/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MzY2MDEsInB1ciI6ImJsb2JfaWQifX0=--ea1653bc3322a5c9ac039f9ab3d90b3636d95bf1/art002e009281~large.jpg)
+![pcb](images/PCB.png)
 
+**Total time spent: 6 hours**
 
-### Recording Links
+# June 21: polishing repo
+adding images from kicad and will start blendering soon for some cool renders
+i need to learn how to make the renders faster.
+![sch](images/SCH1.png)
 
-- https://www.youtube.com/watch?v=K3ibvI49wkM
+**Total time spent: 2 hours**
