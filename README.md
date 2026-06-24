@@ -126,9 +126,16 @@ The board includes a custom silkscreen design element (lunar motif) on the PCB a
 
 ## 📸 Images
 
-Add the following images for submission:
+Here are some images of the project:
 
-```md
-![PCB Render](images/pcb.png)
-![3D Render](images/render.png)
-![Assembled Board](images/photo.jpg)
+![Pcb](images/PCB.png)
+![Sch1](images/SCH1.png)
+![Sch2](images/SCH2.png)
+![Sch3](images/SCH3.png)
+![Sch4](images/SCH4.png)
+![Sch5](images/SCH5.png)
+![Sch6](images/SCH6.png)
+![Sch7](images/SCH7.png)
+![Blender Viewport1](images/blender-viewport1.png)
+![Closeup1](blender/closeup1.png)
+
