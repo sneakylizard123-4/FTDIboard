@@ -21,3 +21,17 @@ i need to learn how to make the renders faster.
 ![sch](images/SCH1.png)
 
 **Total time spent: 2 hours**
+
+# June 23: Blender
+started blender model for pcb
+red solder mask, white silkscreen, enig finish
+![render](images/blender-viewport1.png)
+
+**Total time spent: 3 hours**
+
+# June 24: polish readme
+adding images to readme and make bom.csv draft for parts and whatnot
+will make more blender renders soon with animations and effects
+![sch](images/SCH2.png)
+
+**Total time spent: 3 hours**

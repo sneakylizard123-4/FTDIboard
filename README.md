@@ -58,12 +58,12 @@ The board prioritizes reliability, protection, and usability over unnecessary co
 - Routing:
   - USB differential pair routed with matched length
   - Clean separation of power and signal layers
-- Fabrication-ready design included in `/pcb`
+- Fabrication-ready design included in `/kicad`
 
 ---
 
 ## 📁 Repository Structure
-/pcb → KiCad PCB design files (.kicad_sch, .kicad_pcb, .kicad_pro)
+/kicad → KiCad PCB design files (.kicad_sch, .kicad_pcb, .kicad_pro)
 /cad → 3D models and STEP exports
 /firmware → Optional test or utility firmware
 BOM.csv → Bill of Materials
