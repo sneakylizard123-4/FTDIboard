@@ -1,3 +1,5 @@
+# Allow BOM.csv
+
 # KiCad
 # Schematic and PCB files
 *.kicad_sch
@@ -16,7 +18,7 @@
 *.drl
 *.txt
 *.pos
-*.csv
+
 *.xml
 # Netlist files
 *.net
@@ -37,7 +39,7 @@
 3dmodels/*.stp
 3dmodels/*.stl
 # Simulation
-*.csv
+
 # Temporary files
 *.bak
 *.tmp
@@ -52,7 +54,6 @@ Thumbs.db
 *.pro
 # Netlist files (alternative extension)
 *.net
-# BOM files
 *.xml
 # Pick and place
 *.pos
@@ -70,7 +71,7 @@ Thumbs.db
 *.x3dz
 *.vrml
 # Simulation results
-*.csv
+
 # Temporary and backup files
 *.bak
 *.tmp
@@ -87,3 +88,5 @@ Thumbs.db
 **/fp-info-table
 
 *.lck
+# Allow BOM.csv
+!BOM.csv

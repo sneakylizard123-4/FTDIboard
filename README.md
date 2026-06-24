@@ -1,141 +1,75 @@
 # FTDIboard
 
-FTDIboard is a compact, feature-rich USB-to-UART development interface designed for reliable serial communication, firmware flashing, and debugging of microcontroller-based systems.
-
-It is built around the FT232RL USB-to-serial bridge and focuses on usability, robustness, and clear hardware feedback through extensive status LEDs and protection circuitry.
+FTDIboard is a compact USB-to-UART development interface with FT232RL, switchable 3.3V/5V logic, ESP-style auto-reset, ESD protection, and status LEDs.
 
 ---
 
-## 📌 Key Features
+## Key Features
 
 - FT232RL USB-to-UART bridge
-- Switchable 3.3V / 5V logic levels
-- ESP-style auto reset support (DTR-based)
+- Switchable 3.3V / 5V logic levels  
+- ESP-style auto-reset (DTR-based)
 - USB ESD protection (USBLC6)
-- Resettable fuse (PPTC) for overcurrent protection
-- Multiple status LEDs for power and UART activity
-- Compact 75 × 50 mm PCB
-- 4-layer PCB design for improved routing and stability
-- M3 mounting holes in all four corners for enclosure or fixture mounting
-- Standard 2.54mm headers for breadboard and prototyping compatibility
-- USB-powered operation
+- Resettable fuse (PPTC)
+- Multiple status LEDs
+- Compact 75×50mm, 4-layer PCB
+- M3 mounting holes
+- 2.54mm standard headers
 
 ---
 
-## 🧠 Overview
+## Bill of Materials
 
-FTDIboard is designed as a practical development tool for embedded systems work. It provides a stable and flexible USB-to-serial interface for:
+| References | Qty | Value | Footprint |
+|------------|-----|-------|-----------|
+| U4 U5 | 2 | ULN2003 | TSSOP-16_4.4x5mm_P0.65mm |
+| U3 | 1 | FT232RL | SSOP-28_5.3x10.2mm_P0.65mm |
+| U2 | 1 | TLV75733PDBV | SOT-23-5 |
+| U1 | 1 | USBLC6-2SC6 | SOT-23-6 |
+| C1 C4 C5 C7 C8 C10 C11 C14 | 8 | 100nF | 0805 |
+| C6 C9 | 2 | 4.7uF | 0805 |
+| C2 C12 C13 | 3 | 10uF | 0805 |
+| C3 | 1 | 22uF | 0805 |
+| R4 R9 R10 R11 R12 R13 R14 R15 R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R32 R34 | 25 | 10k | 0805 |
+| R7 R8 R31 R33 | 4 | 1k | 0805 |
+| R3 | 1 | 100k | 0805 |
+| R1 R2 | 2 | 5.1k | 0805 |
+| R5 R6 | 2 | 33R | 0805 |
+| Q2 Q3 | 2 | BC817 | SOT-23 |
+| Q1 | 1 | AO3401A | SOT-23 |
+| D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 D12 | 12 | LED | 0805 LED |
+| J5 | 1 | Conn_01x04 | 1x04 PinHeader |
+| J4 | 1 | Conn_01x07 | 1x07 PinHeader |
+| J1 | 1 | USB_C_Receptacle_USB2.0_14P | USB-C Receptacle |
+| F1 | 1 | 600mA hold, 1.2A trip | Disc 5.1mm |
+| SW1 | 1 | SW_SPDT_321 | SPDT Slide |
+## Usage
 
-- Microcontroller flashing (ESP32, AVR, STM32, etc.)
-- Serial debugging and logging
-- UART communication between devices
-- Prototyping embedded systems
-
-The board prioritizes reliability, protection, and usability over unnecessary complexity.
-
----
-
-## ⚙️ Electrical Features
-
-- USB-to-UART: FT232RL
-- Logic voltage: switchable 3.3V / 5V
-- Auto-reset: DTR-based ESP-style reset circuit
-- Protection:
-  - USBLC6 ESD protection diode
-  - PPTC resettable fuse for current limiting
-- Status indicators:
-  - Power LED
-  - TX/RX activity LEDs
-  - Additional debug/status LEDs
-
----
-
-## 📐 PCB Design
-
-- Dimensions: 75 mm × 50 mm
-- Layer stack: 4-layer PCB
-- Mounting: 4 × M3 mounting holes (corner-mounted)
-- Routing:
-  - USB differential pair routed with matched length
-  - Clean separation of power and signal layers
-- Fabrication-ready design included in `/kicad`
+1. Connect via USB
+2. Install FTDI VCP drivers if needed
+3. Select serial port in your IDE
+4. Use with Arduino IDE, PlatformIO, PuTTY, etc.
 
 ---
 
-## 📁 Repository Structure
-/kicad → KiCad PCB design files (.kicad_sch, .kicad_pcb, .kicad_pro)
-/cad → 3D models and STEP exports
-/firmware → Optional test or utility firmware
-BOM.csv → Bill of Materials
-README.md → Project documentation
+## Images
+
+### PCB Layout
+![PCB](images/PCB.png)
+
+### Schematic
+![Schematic](images/SCH1.png)
+![Schematic](images/SCH2.png)
+![Schematic](images/SCH3.png)
+![Schematic](images/SCH4.png)
+![Schematic](images/SCH5.png)
+![Schematic](images/SCH6.png)
+![Schematic](images/SCH7.png)
+
+### 3D Model
+![3D View](images/blender-viewport1.png)
+![Closeup](blender/closeup1.png)
 
 ---
 
-## 📦 Bill of Materials
-
-See `BOM.csv` for full component list.
-
-Main components include:
-- FT232RL USB-to-UART IC
-- USB connector (USB-C or Micro USB depending on revision)
-- USBLC6 ESD protection device
-- PPTC resettable fuse
-- Voltage regulator / switching circuit for 3.3V and 5V rails
-- LEDs for status indication
-- Pin headers (2.54mm)
-- M3 mounting hardware compatibility
-
----
-
-## 🔌 Usage
-
-1. Connect FTDIboard via USB
-2. Install required drivers if needed:
-   - FTDI VCP drivers
-3. Select correct serial port in your development environment
-4. Use with tools such as:
-   - Arduino IDE Serial Monitor
-   - PlatformIO
-   - PuTTY / minicom / screen
-
----
-
-## 🧪 Applications
-
-- Microcontroller programming
-- Serial debugging
-- UART bridging between systems
-- Embedded system prototyping
-- Hardware bring-up and testing
-
----
-
-## 🧊 Mechanical Design
-
-- 75 × 50 mm PCB footprint
-- 4 × M3 mounting holes in corner layout for secure installation
-- Designed for mounting in enclosures, test rigs, or lab setups
-
----
-
-## 🌙 Design Notes
-
-The board includes a custom silkscreen design element (lunar motif) on the PCB as a visual signature, combining functional engineering with identifiable aesthetic design.
-
----
-
-## 📸 Images
-
-Here are some images of the project:
-
-![Pcb](images/PCB.png)
-![Sch1](images/SCH1.png)
-![Sch2](images/SCH2.png)
-![Sch3](images/SCH3.png)
-![Sch4](images/SCH4.png)
-![Sch5](images/SCH5.png)
-![Sch6](images/SCH6.png)
-![Sch7](images/SCH7.png)
-![Blender Viewport1](images/blender-viewport1.png)
-![Closeup1](blender/closeup1.png)
-
+*Full BOM available in BOM.csv*
