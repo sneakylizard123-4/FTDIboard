@@ -22,8 +22,8 @@ FTDIboard is a compact USB-to-UART development interface with FT232RL, switchabl
 
 | References | Qty | Value | Footprint |
 |------------|-----|-------|-----------|
-| U4 U5 | 2 | ULN2003 | TSSOP-16_4.4x5mm_P0.65mm |
-| U3 | 1 | FT232RL | SSOP-28_5.3x10.2mm_P0.65mm |
+| U4 U5 | 2 | ULN2003 | TSSOP-16 |
+| U3 | 1 | FT232RL | SSOP-28 |
 | U2 | 1 | TLV75733PDBV | SOT-23-5 |
 | U1 | 1 | USBLC6-2SC6 | SOT-23-6 |
 | C1 C4 C5 C7 C8 C10 C11 C14 | 8 | 100nF | 0805 |
@@ -38,11 +38,11 @@ FTDIboard is a compact USB-to-UART development interface with FT232RL, switchabl
 | Q2 Q3 | 2 | BC817 | SOT-23 |
 | Q1 | 1 | AO3401A | SOT-23 |
 | D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 D12 | 12 | LED | 0805 LED |
-| J5 | 1 | Conn_01x04 | 1x04 PinHeader 2.54mm |
-| J4 | 1 | Conn_01x07 | 1x07 PinHeader 2.54mm |
+| J5 | 1 | Conn_01x04 | 1x04 Header 2.54mm |
+| J4 | 1 | Conn_01x07 | 1x07 Header 2.54mm |
 | J1 | 1 | USB_C_Receptacle_USB2.0_14P | USB-C Receptacle |
 | F1 | 1 | 600mA hold, 1.2A trip | Disc 5.1mm |
-| SW1 | 1 | SW_SPDT_321 | SPDT Slide |
+| SW1 | 1 | SW_SPDT_321 | SPDT Slide switch |
 ## Usage
 
 1. Connect via USB
