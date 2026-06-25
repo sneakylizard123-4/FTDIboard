@@ -39,6 +39,8 @@ will make more blender renders soon with animations and effects
 # June 25: BOM
 looked for parts and made a bom
 parts are from lcsc
+added pcbs from jlcpcb and pcbway just in case
+the more the merrier they say
 ![sch](images/SCH3.png)
 
 **Total time spent: 4 hours**
