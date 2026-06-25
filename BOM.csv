@@ -1,5 +1,4 @@
-Reference,Qty,Value,Footprint,LCSC,MOQ,Unit Price,Line Total,In Stock
-U4 U5,2,ULN2003,TSSOP-16_4.4x5mm_P0.65mm,C91443,10,$0.1874,$1.87,Yes
+Reference,Qty,Value,Footprint,LCSC,MOQ,Unit Price,Line Total,In Stock,Notes
 U3,1,FT232RL,SSOP-28_5.3x10.2mm_P0.65mm,C8690,5,$6.1561,$30.78,Yes
 U2,1,TLV75733PDBV,SOT-23-5,C485517,5,$0.1819,$0.91,Yes
 U1,1,USBLC6-2SC6,SOT-23-6,C7519,10,$0.0896,$0.90,Yes
@@ -25,4 +24,6 @@ J4,1,Conn_01x07,1x07 PinHeader 2.54mm,C22438157,5,$0.1192,$0.60,Yes
 J1,1,USB_C_Receptacle_USB2.0_14P,USB-C Receptacle,C165948,5,$0.1857,$0.93,Yes
 F1,1,"600mA hold, 1.2A trip",Disc 5.1mm,C94464,5,$0.2491,$1.25,Yes
 SW1,1,SW_SPDT_321,SPDT Slide,C221829,5,$0.6162,$3.08,Yes
-TOTAL,73,,,,"1,010",,"$56.03",
+COMPONENT TOTAL,73,,,,"1,010",,$56.03,
+PCB,1,JLCPCB,PCB,"Lead-Free HASL, Purple mask",5,$3.42,$17.10,Yes,"1 needed in total, choose manufacturer"
+PCB,1,PCBWAY,PCB,"Lead-Free HASL, Red mask",5,$7.228,$36.14,Yes,"1 needed in total, choose manufacturer"
