@@ -22,7 +22,7 @@ D10 D8 D6 D4 D2,5,LED White (CBUS),0805 LED,C34499,50,$0.0203,$1.01,Yes
 J5,1,Conn_01x04,1x04 PinHeader 2.54mm,C41427519,5,$0.2015,$1.01,Yes
 J4,1,Conn_01x07,1x07 PinHeader 2.54mm,C22438157,5,$0.1192,$0.60,Yes
 J1,1,USB_C_Receptacle_USB2.0_14P,USB-C Receptacle,C165948,5,$0.1857,$0.93,Yes
-F1,1,"600mA hold, 1.2A trip",Disc 5.1mm,C94464,5,$0.2491,$1.25,Yes
+F1,1,"600mA hold, 1.2A trip",Disc 5.1mm,C94464,5,$0.2491,$1.25,Yes,just in case yk,
 SW1,1,SW_SPDT_321,SPDT Slide,C221829,5,$0.6162,$3.08,Yes
 COMPONENT TOTAL,73,,,,"1,010",,$56.03,
 PCB,1,JLCPCB,PCB,"Lead-Free HASL, Purple mask",5,$3.42,$17.10,Yes,"1 needed in total, choose manufacturer"
