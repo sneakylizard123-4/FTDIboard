@@ -40,3 +40,5 @@ will make more blender renders soon with animations and effects
 looked for parts and made a bom
 parts are from lcsc
 ![sch](images/SCH3.png)
+
+**Total time spent: 4 hours**
