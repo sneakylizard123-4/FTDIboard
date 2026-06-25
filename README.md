@@ -38,8 +38,8 @@ FTDIboard is a compact USB-to-UART development interface with FT232RL, switchabl
 | Q2 Q3 | 2 | BC817 | SOT-23 |
 | Q1 | 1 | AO3401A | SOT-23 |
 | D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 D11 D12 | 12 | LED | 0805 LED |
-| J5 | 1 | Conn_01x04 | 1x04 Header 2.54mm |
-| J4 | 1 | Conn_01x07 | 1x07 Header 2.54mm |
+| J5 | 1 | Conn_01x04 | 1x4 Header 2.54mm |
+| J4 | 1 | Conn_01x07 | 1x7 Header 2.54mm |
 | J1 | 1 | USB_C_Receptacle_USB2.0_14P | USB-C Receptacle |
 | F1 | 1 | 600mA hold, 1.2A trip | Disc 5.1mm |
 | SW1 | 1 | SW_SPDT_321 | SPDT Slide switch |
