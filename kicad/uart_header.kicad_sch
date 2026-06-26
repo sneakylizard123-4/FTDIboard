@@ -580,7 +580,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 27.94) (xy 46.99 27.94)
+			(xy 54.61 25.4) (xy 57.15 25.4)
 		)
 		(stroke
 			(width 0)
@@ -590,7 +590,7 @@
 	)
 	(wire
 		(pts
-			(xy 22.86 33.02) (xy 26.67 33.02)
+			(xy 33.02 30.48) (xy 36.83 30.48)
 		)
 		(stroke
 			(width 0)
@@ -600,7 +600,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 40.64) (xy 46.99 40.64)
+			(xy 54.61 38.1) (xy 57.15 38.1)
 		)
 		(stroke
 			(width 0)
@@ -610,7 +610,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 38.1) (xy 46.99 38.1)
+			(xy 54.61 35.56) (xy 57.15 35.56)
 		)
 		(stroke
 			(width 0)
@@ -620,7 +620,7 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 33.02) (xy 46.99 33.02)
+			(xy 41.91 30.48) (xy 57.15 30.48)
 		)
 		(stroke
 			(width 0)
@@ -630,7 +630,7 @@
 	)
 	(wire
 		(pts
-			(xy 22.86 35.56) (xy 33.02 35.56)
+			(xy 33.02 33.02) (xy 43.18 33.02)
 		)
 		(stroke
 			(width 0)
@@ -640,7 +640,7 @@
 	)
 	(wire
 		(pts
-			(xy 15.24 25.4) (xy 46.99 25.4)
+			(xy 25.4 22.86) (xy 57.15 22.86)
 		)
 		(stroke
 			(width 0)
@@ -650,7 +650,7 @@
 	)
 	(wire
 		(pts
-			(xy 44.45 30.48) (xy 46.99 30.48)
+			(xy 54.61 27.94) (xy 57.15 27.94)
 		)
 		(stroke
 			(width 0)
@@ -660,7 +660,7 @@
 	)
 	(wire
 		(pts
-			(xy 15.24 25.4) (xy 15.24 27.94)
+			(xy 25.4 22.86) (xy 25.4 25.4)
 		)
 		(stroke
 			(width 0)
@@ -670,7 +670,7 @@
 	)
 	(wire
 		(pts
-			(xy 38.1 35.56) (xy 46.99 35.56)
+			(xy 48.26 33.02) (xy 57.15 33.02)
 		)
 		(stroke
 			(width 0)
@@ -680,7 +680,7 @@
 	)
 	(hierarchical_label "DTR"
 		(shape input)
-		(at 44.45 38.1 180)
+		(at 54.61 35.56 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -691,7 +691,7 @@
 	)
 	(hierarchical_label "RTS"
 		(shape input)
-		(at 44.45 40.64 180)
+		(at 54.61 38.1 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -702,7 +702,7 @@
 	)
 	(hierarchical_label "TXD"
 		(shape input)
-		(at 22.86 33.02 180)
+		(at 33.02 30.48 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -713,7 +713,7 @@
 	)
 	(hierarchical_label "CTS"
 		(shape input)
-		(at 44.45 27.94 180)
+		(at 54.61 25.4 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -724,7 +724,7 @@
 	)
 	(hierarchical_label "RXD"
 		(shape input)
-		(at 22.86 35.56 180)
+		(at 33.02 33.02 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -735,7 +735,7 @@
 	)
 	(hierarchical_label "VIO"
 		(shape input)
-		(at 44.45 30.48 180)
+		(at 54.61 27.94 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -746,7 +746,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 15.24 27.94 0)
+		(at 25.4 25.4 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -757,7 +757,7 @@
 		(fields_autoplaced yes)
 		(uuid "3831b356-194d-49d7-b836-7014e5e7ca71")
 		(property "Reference" "#PWR013"
-			(at 15.24 34.29 0)
+			(at 25.4 31.75 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -768,7 +768,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 15.24 33.02 0)
+			(at 25.4 30.48 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -778,7 +778,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 15.24 27.94 0)
+			(at 25.4 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -789,7 +789,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 15.24 27.94 0)
+			(at 25.4 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -800,7 +800,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 15.24 27.94 0)
+			(at 25.4 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -824,7 +824,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small_US")
-		(at 35.56 35.56 90)
+		(at 45.72 33.02 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -835,7 +835,7 @@
 		(fields_autoplaced yes)
 		(uuid "98ba9db4-f96e-44dd-b038-1b9ab902aff5")
 		(property "Reference" "R8"
-			(at 35.56 29.21 90)
+			(at 45.72 26.67 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -845,7 +845,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 35.56 31.75 90)
+			(at 45.72 29.21 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -855,7 +855,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 35.56 35.56 0)
+			(at 45.72 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -866,7 +866,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 35.56 35.56 0)
+			(at 45.72 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -877,7 +877,7 @@
 			)
 		)
 		(property "Description" "Resistor, small US symbol"
-			(at 35.56 35.56 0)
+			(at 45.72 33.02 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -904,7 +904,7 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_01x07")
-		(at 52.07 33.02 0)
+		(at 62.23 30.48 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -915,7 +915,7 @@
 		(fields_autoplaced yes)
 		(uuid "a7f19f30-3a29-47ff-a24c-d24d723be873")
 		(property "Reference" "J4"
-			(at 54.61 31.7499 0)
+			(at 64.77 29.2099 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -926,7 +926,7 @@
 			)
 		)
 		(property "Value" "Conn_01x07"
-			(at 54.61 34.2899 0)
+			(at 64.77 31.7499 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -937,7 +937,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical"
-			(at 52.07 33.02 0)
+			(at 62.23 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -948,7 +948,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 52.07 33.02 0)
+			(at 62.23 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -959,7 +959,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x07, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 52.07 33.02 0)
+			(at 62.23 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1001,7 +1001,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small_US")
-		(at 29.21 33.02 90)
+		(at 39.37 30.48 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1012,7 +1012,7 @@
 		(fields_autoplaced yes)
 		(uuid "d209ba28-09bc-4e10-9916-8e0833589ded")
 		(property "Reference" "R7"
-			(at 29.21 26.67 90)
+			(at 39.37 24.13 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1022,7 +1022,7 @@
 			)
 		)
 		(property "Value" "1k"
-			(at 29.21 29.21 90)
+			(at 39.37 26.67 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1032,7 +1032,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
-			(at 29.21 33.02 0)
+			(at 39.37 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1043,7 +1043,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 29.21 33.02 0)
+			(at 39.37 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1054,7 +1054,7 @@
 			)
 		)
 		(property "Description" "Resistor, small US symbol"
-			(at 29.21 33.02 0)
+			(at 39.37 30.48 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
