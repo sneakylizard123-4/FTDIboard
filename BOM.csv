@@ -1,29 +1,27 @@
-Reference,Qty,Value,Footprint,LCSC,MOQ,Unit Price,Line Total,In Stock,Notes
-U3,1,FT232RL,SSOP-28_5.3x10.2mm_P0.65mm,C8690,5,$6.1561,$30.78,Yes
-U2,1,TLV75733PDBV,SOT-23-5,C485517,5,$0.1819,$0.91,Yes
-U1,1,USBLC6-2SC6,SOT-23-6,C7519,10,$0.0896,$0.90,Yes
-C1 C4 C5 C7 C8 C10 C11 C14,8,100nF,0805,C1711,50,$0.0266,$1.33,Yes
-C6 C9,2,4.7uF,0805,C98195,20,$0.0450,$0.90,Yes
-C2 C12 C13,3,10uF,0805,C15850,20,$0.2211,$4.42,Yes
-C3,1,22uF,0805,C907991,5,$0.1794,$0.90,Yes
-R4 R9 R10 R11 R12 R13 R14 R15 R16 R17 R18 R19 R20 R21 R22 R23 R24 R25 R26 R27 R28 R29 R30 R32 R34,25,10k,0805,C2889526,100,$0.0009,$0.09,Yes
-R7 R8 R31 R33,4,1k,0805,C2907232,100,$0.0033,$0.33,Yes
-R3,1,100k,0805,C100049,100,$0.0038,$0.38,Yes
-R1 R2,2,5.1k,0805,C27834,100,$0.0035,$0.35,Yes
-R5 R6,2,33R,0805,C2907258,100,$0.0031,$0.31,Yes
-Q2 Q3,2,BC817,SOT-23,C22400355,50,$0.0110,$0.55,Yes
-Q1,1,AO3401A,SOT-23,C15127,10,$0.0717,$0.72,Yes
-D12 D11,2,LED Green (Power),0805 LED,C2297,50,$0.0163,$0.81,Yes
-D9,1,LED Yellow (TX),0805 LED,C2296,50,$0.0123,$0.61,Yes
-D7,1,LED Blue (RX),0805 LED,C2293,50,$0.0123,$0.61,Yes
-D5 D3,2,LED Orange (Flow Control),0805 LED,C110371,50,$0.0159,$0.80,Yes
-D1,1,LED Red (DTR),0805 LED,C2295,50,$0.0116,$0.58,Yes
-D10 D8 D6 D4 D2,5,LED White (CBUS),0805 LED,C34499,50,$0.0203,$1.01,Yes
-J5,1,Conn_01x04,1x04 PinHeader 2.54mm,C41427519,5,$0.2015,$1.01,Yes
-J4,1,Conn_01x07,1x07 PinHeader 2.54mm,C22438157,5,$0.1192,$0.60,Yes
-J1,1,USB_C_Receptacle_USB2.0_14P,USB-C Receptacle,C165948,5,$0.1857,$0.93,Yes
-F1,1,"600mA hold, 1.2A trip",Disc 5.1mm,C94464,5,$0.2491,$1.25,Yes,just in case yk,
-SW1,1,SW_SPDT_321,SPDT Slide,C221829,5,$0.6162,$3.08,Yes
-COMPONENT TOTAL,73,,,,"1,010",,$56.03,
-PCB,1,JLCPCB,PCB,"Lead-Free HASL, Purple mask",5,$3.42,$17.10,Yes,"1 needed in total, choose manufacturer"
-PCB,1,PCBWAY,PCB,"Lead-Free HASL, Red mask",5,$7.228,$36.14,Yes,"1 needed in total, choose manufacturer"
+Component,Qty,LCSC Part #,Unit Price,Line Total,Buy
+FT232RL,1,C8690,$6.1561,$6.16,https://www.lcsc.com/product-detail/_C8690.html
+TLV75733PDBV,1,C485517,$0.1819,$0.18,https://www.lcsc.com/product-detail/_C485517.html
+USBLC6-2SC6,1,C7519,$0.0896,$0.09,https://www.lcsc.com/product-detail/_C7519.html
+100nF 0805,8,C1711,$0.0266,$0.21,https://www.lcsc.com/product-detail/_C1711.html
+4.7uF 0805,2,C98195,$0.0450,$0.09,https://www.lcsc.com/product-detail/_C98195.html
+10uF 0805,3,C15850,$0.2211,$0.66,https://www.lcsc.com/product-detail/_C15850.html
+22uF 0805,1,C907991,$0.1794,$0.18,https://www.lcsc.com/product-detail/_C907991.html
+10k 0805,25,C2889526,$0.0009,$0.02,https://www.lcsc.com/product-detail/_C2889526.html
+1k 0805,4,C2907232,$0.0033,$0.01,https://www.lcsc.com/product-detail/_C2907232.html
+100k 0805,1,C100049,$0.0038,$0.00,https://www.lcsc.com/product-detail/_C100049.html
+5.1k 0805,2,C27834,$0.0035,$0.01,https://www.lcsc.com/product-detail/_C27834.html
+33R 0805,2,C2907258,$0.0031,$0.01,https://www.lcsc.com/product-detail/_C2907258.html
+BC817 SOT-23,2,C22400355,$0.0110,$0.02,https://www.lcsc.com/product-detail/_C22400355.html
+AO3401A SOT-23,1,C15127,$0.0717,$0.07,https://www.lcsc.com/product-detail/_C15127.html
+LED Green 0805,2,C2297,$0.0163,$0.03,https://www.lcsc.com/product-detail/_C2297.html
+LED Yellow 0805,1,C2296,$0.0123,$0.01,https://www.lcsc.com/product-detail/_C2296.html
+LED Blue 0805,1,C2293,$0.0123,$0.01,https://www.lcsc.com/product-detail/_C2293.html
+LED Orange 0805,2,C110371,$0.0159,$0.03,https://www.lcsc.com/product-detail/_C110371.html
+LED Red 0805,1,C2295,$0.0116,$0.01,https://www.lcsc.com/product-detail/_C2295.html
+LED White 0805,5,C34499,$0.0203,$0.10,https://www.lcsc.com/product-detail/_C34499.html
+Conn_01x04 2.54mm,1,C41427519,$0.2015,$0.20,https://www.lcsc.com/product-detail/_C41427519.html
+Conn_01x07 2.54mm,1,C22438157,$0.1192,$0.12,https://www.lcsc.com/product-detail/_C22438157.html
+USB-C Receptacle 14P,1,C165948,$0.1857,$0.19,https://www.lcsc.com/product-detail/_C165948.html
+PPTC 600mA/1.2A,1,C94464,$0.2491,$0.25,https://www.lcsc.com/product-detail/_C94464.html
+SPDT Slide Switch,1,C221829,$0.6162,$0.62,https://www.lcsc.com/product-detail/_C221829.html
+,,,,,COMPONENT TOTAL: $8.26
