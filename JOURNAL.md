@@ -14,6 +14,7 @@ chose the ft232rl as the main ic since it's well supported and cheap.
 added usbLC6 for esd protection on the usb lines.
 picked the tlv75733 for 3.3v regulation with a switchable 5v option.
 going with usb-c for the connector since it's 2026.
+![sch power](images/SCH1.png)
 
 **Total time spent: 2 hours**
 
