@@ -133736,7 +133736,7 @@
 		(at 38.3 71.25 270)
 		(layer "B.SilkS")
 		(size 15 15)
-		(text "ebitcoin:1BfTdFf8ULefG6G7BJvZzLT9TV4Rqt2ZuS?label=Donation&message=FTDI%20Board%20V1%20Donation")
+		(text "bitcoin:1BfTdFf8ULefG6G7BJvZzLT9TV4Rqt2ZuS?label=Donation&message=FTDI%20Board%20V1%20Donation")
 		(text_height 1.5)
 		(type qr)
 		(ecc_level H)
