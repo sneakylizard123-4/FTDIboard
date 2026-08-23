@@ -999,6 +999,22 @@
 			(embedded_fonts no)
 		)
 	)
+	(text "moved from 5vusb"
+		(exclude_from_sim no)
+		(at 112.268 64.008 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "c042f00b-562a-4354-adc1-f729adedf8c8")
+	)
+	(junction
+		(at 104.14 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2a0e31dc-3aeb-4683-9b9c-15ac873f03dd")
+	)
 	(junction
 		(at 88.9 66.04)
 		(diameter 0)
@@ -1010,12 +1026,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9b288eb6-d4e8-40cf-8ad6-2ecbb8162ae8")
-	)
-	(junction
-		(at 104.14 66.04)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a69e9200-d45d-46c9-a0ab-ce19f55efddc")
 	)
 	(junction
 		(at 124.46 73.66)
@@ -1110,6 +1120,16 @@
 			(type default)
 		)
 		(uuid "143b4026-08d7-4443-add3-4ebd3b6c678a")
+	)
+	(wire
+		(pts
+			(xy 99.06 66.04) (xy 104.14 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d23367f-54a0-48b9-9b62-f1c6d9e4f3d1")
 	)
 	(wire
 		(pts
@@ -1503,16 +1523,6 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 62.23) (xy 104.14 66.04)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f182fa0f-c987-485b-8e91-f2b6680c4685")
-	)
-	(wire
-		(pts
 			(xy 121.92 87.63) (xy 124.46 87.63)
 		)
 		(stroke
@@ -1661,17 +1671,6 @@
 			(justify left)
 		)
 		(uuid "bc91d862-9455-4ca8-8e9b-f2702c24c3ba")
-	)
-	(hierarchical_label "5V_USB"
-		(shape input)
-		(at 104.14 62.23 90)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "d3a09f6b-bd94-4771-815c-9226a3e15ab2")
 	)
 	(hierarchical_label "DTR_N"
 		(shape input)

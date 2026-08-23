@@ -180,3 +180,38 @@ took a while going through every single resistor and cap to find the right lcsc 
 ![sch](images/SCH3.png)
 
 **Total time spent: 4 hours**
+
+# August 22: boards arrived, soldering
+
+pcbs finally showed up. purple mask looks even better in person than the renders.
+decided to try paste this time instead of soldering every pad by hand. spread it on with a stencil-ish approach, took a bunch of progress shots because it was weirdly satisfying.
+
+![paste start](images/physical/paste_1.jpg)
+![paste mid](images/physical/paste_6.jpg)
+![paste done](images/physical/paste_12.jpg)
+
+placed everything while the paste was tacky. got a bridge between two pins on the ssop-28 ft232rl and one on a uln2003 (tssop-16), dragged those out with flux and wick. checked every pin under the magnifying glass after that.
+
+skipped the fuse for now, figured id deal with it later.
+powered it up for the first time... nothing caught fire or released magic smoke, so thats a win.
+
+**Total time spent: 4 hours**
+
+# August 22: bring up and testing
+
+first proper test. checked the rails with the multimeter before plugging anything important in - 5v on vbus after where the fuse should be, and 3.3v coming off the ldo nice and stable. both within spec.
+
+did have to do some surgery: never bothered fitting the pptc, just blobbed solder across its pads instead. also cut a trace and jumpered it. not gonna pretend either of those were in the plan.
+
+after all that, plugged into the laptop and it enumerated straight away - lsusb picked it up, no driver drama.
+
+didnt get around to testing the esp auto-reset flashing yet, will do that next session. but the core of the board works which means the schematic wasnt garbage after all.
+
+![fuse bridged](images/physical/solder_fuse.jpg)
+![rework](images/physical/cut_trace_and_bridge.jpg)
+![lsusb](images/physical/detected_via_lsusb.jpg)
+
+video of the fuse bridge:
+[bridging the fuse](images/physical/bridge_fuse_with_tweezers.mp4)
+
+**Total time spent: 4 hours**
