@@ -1250,6 +1250,17 @@
 			)
 		)
 	)
+	(hierarchical_label "RTS_N"
+		(shape input)
+		(at 132.08 96.52 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0f606350-5244-47c7-8b2a-bacedc5359f0")
+	)
 	(hierarchical_label "3.3V"
 		(shape input)
 		(at 110.49 53.34 180)
@@ -1293,6 +1304,17 @@
 			(justify right)
 		)
 		(uuid "7ea5bcad-e833-4a5f-92c1-2684e234501c")
+	)
+	(hierarchical_label "DTR_N"
+		(shape input)
+		(at 78.74 96.52 270)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9ca6ed3a-76a4-4143-a43f-b595a517f89f")
 	)
 	(hierarchical_label "RTS_N"
 		(shape input)
@@ -1578,84 +1600,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 78.74 96.52 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "621b8c95-102c-40ed-81a5-0a36efe3c776")
-		(property "Reference" "#PWR020"
-			(at 78.74 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 78.74 101.6 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 78.74 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 78.74 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 78.74 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "a71d570d-78f3-4987-9886-49ad8a8987cd")
-		)
-		(instances
-			(project "FTDIboard"
-				(path "/aa1b40ca-4f8c-407d-ac45-3b99f0a9bdba/c80a0129-f13c-4535-bdeb-ba86d9ff1904"
-					(reference "#PWR020")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector_Generic:Conn_01x04")
 		(at 116.84 48.26 0)
 		(unit 1)
@@ -1820,84 +1764,6 @@
 			(project "FTDIboard"
 				(path "/aa1b40ca-4f8c-407d-ac45-3b99f0a9bdba/c80a0129-f13c-4535-bdeb-ba86d9ff1904"
 					(reference "C14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 132.08 96.52 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ae302639-32cc-45bd-9192-be0a71ae653e")
-		(property "Reference" "#PWR021"
-			(at 132.08 102.87 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 132.08 101.6 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 132.08 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 132.08 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 132.08 96.52 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "8fa943cb-2e8a-41ba-b2a6-6cb8ddbea574")
-		)
-		(instances
-			(project "FTDIboard"
-				(path "/aa1b40ca-4f8c-407d-ac45-3b99f0a9bdba/c80a0129-f13c-4535-bdeb-ba86d9ff1904"
-					(reference "#PWR021")
 					(unit 1)
 				)
 			)

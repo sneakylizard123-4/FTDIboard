@@ -215,3 +215,38 @@ video of the fuse bridge:
 [bridging the fuse](images/physical/bridge_fuse_with_tweezers.mp4)
 
 **Total time spent: 4 hours**
+
+# August 23: proving the board actually works
+
+before trusting the board in a real flash attempt i wanted hard evidence it wasnt garbage.
+
+lsusb picked up the ft232rl straight away - 0403:6001, ftdi_sio bound clean, factory eeprom strings since i never programmed any. loopback test through the header pins passed. then passed AGAIN later mid-session just to be sure. board exonerated twice, feels good.
+
+while poking around i confirmed the vccio bug id suspected - io pins stay at 3.3v even with the switch flipped to 5v, worked fine until you actually use the switch. bodged a wire so vccio follows the switched rail. also caught the auto-reset stage latching: after the first trigger it held enable down until you pulled power. added a bodge resistor so it releases properly.
+
+characterized the power budget while i was in there (idle / leds all lit / data blasting) and dumped todays findings into the grant narrative. honestly the war stories section writes itself.
+![usb](images/physical/detected_via_lsusb.jpg)
+
+**Total time spent: 3 hours**
+
+# August 23: the esp32 flashing saga
+
+this ate my whole evening. tried flashing an esp32 devkit through the board and got absolutely nothing on rx.
+
+the confusion spiral was real. passive listen at 115200: silent. baud scan across every rate i know, both dtr/rts polarities: silent. the multimeter showed weak 1-3v swings which turned out to be the dmm averaging square waves. spent ages doubting my wiring labels until a grounding exercise pin by pin proved they were right all along.
+
+built some c probes against libftdi1 to get at the raw pins - pin level sampling, a slow toggle to verify with the meter, live edge monitoring, and async bitbang waveform captures. learned the hard way that every raw libftdi run detaches the kernel driver and never gives it back, so /dev/ttyUSB0 kept vanishing and masquerading as hardware faults. manual sysfs rebinding after every probe. only one genuine bus disconnect the entire night.
+
+then the side quest: the uno i grabbed to test the cable half-enumerated with error -71, zero interfaces. same cable on a different port: clean enum plus a 45 second stress test, 85kb written, zero errors. verdict - the pc usb port is faulty. not the cable, not the board. moved everything to the good port and switched to the sparkfun cable for the rest of the night, it just works.
+
+breakthrough: after swapping wires at the devkit end, the waveform capture showed six dense uart bursts, and a live listen during reset caught the full boot rom text at 115200 - rst:0x1 (POWERON_RESET), boot:0x13 (SPI_FAST_FLASH_BOOT), the whole banner. turns out its an adafruit huzzah32 breakout, no onboard usb-serial and no auto-reset circuit.
+
+endgame: esptool still refuses to connect even with the download-mode banner showing seconds before each try. byte level trace shows valid sync frames going out, 100ms waits, zero response, thirty times over. grounds verified at ~0 ohm, levels safe at 3.3v logic, both jumper wires individually proven conductive, adapter loopback re-passed mid session. even applied the adafruit erratum - pre aug 2020 boards ship missing the 1k rx pull up - added one externally, verified electrically. still nothing. twenty rounds of raw sync patterns later the only catch was another stray boot banner from an accidental reset press.
+
+final verdict: my board fully functional, cable good, port replaced, wiring correct. the esp32 boots and runs fine but uart0-rx seems deaf - can boot existing flash, cant take new flashes over serial. gonna cross check with a borrowed adapter before condemning the chip.
+
+oh and the host logs were spamming pcie correctable errors from the gpu slot all night. platform level electrical noise, worth watching.
+
+![viewport](images/blender-viewport1.png)
+
+**Total time spent: 5 hours**

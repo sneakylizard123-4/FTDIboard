@@ -6,3 +6,4 @@ v2:
 - use resistor arrays
 - smd parts
 - multiple regulators
+- ft232rl output voltage
