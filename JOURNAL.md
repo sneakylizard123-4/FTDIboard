@@ -17,7 +17,7 @@ picked tlv75733 for 3.3v, switchable to 5v for the output. usblc6 for esd on the
 
 wrote out the whole passive list too - 25x 10k, 4x 1k, a 100k, 2x 5.1k, 2x 33r, and the caps. all 0805. made the kicad project skeleton.
 
-![sch power](images/SCH1.png)
+![sch power](images/V1/SCH1.png)
 
 **Total time spent: 2 hours**
 
@@ -33,7 +33,7 @@ pptc on vbus with a 100nf right at the connector. ldo with 10uf in and out, plus
 
 tricky bit was making sure the switch cant back-feed the regulator and short vbus to gnd. ended up putting the mosfet in the load path to stop that. not sure if its overkill but its cheap and it works.
 
-![sch power](images/SCH1.png)
+![sch power](images/V1/SCH1.png)
 
 **Total time spent: 3 hours**
 
@@ -49,7 +49,7 @@ hooked the status pins (txd rxd rts cts dtr dsr dcd ri) to the led network.
 
 then the esp auto-reset circuit with the two bc817s on dtr/rts. this was the worst part. the ide toggles dtr/rts to enter bootloader and the transistors have to pull esp enable and gpio0 at the right times. spent ages getting the polarity right so the reset sequence matches what esptool wants, 100k pullup on reset so it sits high by default. i read like three different forum posts about this before it clicked.
 
-![sch core](images/SCH2.png)
+![sch core](images/V1/SCH2.png)
 
 **Total time spent: 4 hours**
 
@@ -65,7 +65,7 @@ also put in two uln2003s to buffer the cbus outputs, open-collector so i can swi
 
 did the full review at the end, ran erc. caught two nets that were the same signal with different names and a polarity error on a transistor. fixed em, erc is clean now. saved a real headache down the line with those net names, board house would have probably rejected it.
 
-![sch leds](images/SCH3.png)
+![sch leds](images/V1/SCH3.png)
 
 **Total time spent: 3 hours**
 
@@ -81,7 +81,7 @@ led resistors next to their leds to keep the fan-out clean. power stuff (ldo swi
 
 moved components around a lot until the ratsnest crossings were low and the usb path to the ft232rl was short. placement is everything, bad placement ruins the routing later.
 
-![pcb placement](images/SCH4.png)
+![pcb placement](images/V1/SCH4.png)
 
 **Total time spent: 4 hours**
 
@@ -97,7 +97,7 @@ set up the planes with thermal reliefs so soldering isnt a nightmare of heat sin
 
 then fanned the ft232rl out - status pins to their leds and resistors, power rails to the planes.
 
-![pcb routing](images/SCH5.png)
+![pcb routing](images/V1/SCH5.png)
 
 **Total time spent: 5 hours**
 
@@ -113,7 +113,7 @@ drc flagged a few clearance violations near the usb connector where the cc resis
 
 cleaned up the rest - killed unnecessary vias, straightened traces so it doesnt look like spaghetti. this always takes longer than i expect, its the fiddly part of routing.
 
-![pcb routing2](images/SCH6.png)
+![pcb routing2](images/V1/SCH6.png)
 
 **Total time spent: 4 hours**
 
@@ -129,7 +129,7 @@ final drc across everything - clearance, silkscreen to pad, courtyard overlaps, 
 
 exported gerbers and checked em in the previewer so nothing was flipped or missing. drill file looks right too.
 
-![pcb final](images/SCH7.png)
+![pcb final](images/V1/SCH7.png)
 
 **Total time spent: 3 hours**
 
@@ -143,7 +143,7 @@ checked the ft232rl footprint against the datasheet pin spacing again, usb conne
 
 exported the final fab files - gerbers, drills, pick and place. last look in the 3d viewer. went back and forth on the solder mask color for like an hour before ordering, ended up purple.
 
-![pcb](images/PCB.png)
+![pcb](images/V1/PCB.png)
 
 **Total time spent: 6 hours**
 
@@ -151,7 +151,7 @@ exported the final fab files - gerbers, drills, pick and place. last look in the
 adding images from kicad and will start blendering soon for some cool renders
 i need to learn how to make the renders faster.
 spent a bunch of the time just exporting screenshots from kicad and cropping them so they dont look terrible in the readme.
-![sch](images/SCH1.png)
+![sch](images/V1/SCH1.png)
 
 **Total time spent: 2 hours**
 
@@ -159,7 +159,7 @@ spent a bunch of the time just exporting screenshots from kicad and cropping the
 started blender model for pcb
 red solder mask, white silkscreen, enig finish
 set up a few test renders to get the lighting right, the board keeps coming out too dark or too shiny, still fiddling with it
-![render](images/blender-viewport1.png)
+![render](images/V1/blender-viewport1.png)
 
 **Total time spent: 3 hours**
 
@@ -167,7 +167,7 @@ set up a few test renders to get the lighting right, the board keeps coming out 
 adding images to readme and make bom.csv draft for parts and whatnot
 will make more blender renders soon with animations and effects
 also played around with a turntable animation idea for the board, not sure if i'll commit to it yet
-![sch](images/SCH2.png)
+![sch](images/V1/SCH2.png)
 
 **Total time spent: 3 hours**
 
@@ -177,7 +177,7 @@ parts are from lcsc
 added pcbs from jlcpcb and pcbway just in case
 the more the merrier they say
 took a while going through every single resistor and cap to find the right lcsc part number, stock kept running out on the cheap ones
-![sch](images/SCH3.png)
+![sch](images/V1/SCH3.png)
 
 **Total time spent: 4 hours**
 
@@ -186,9 +186,9 @@ took a while going through every single resistor and cap to find the right lcsc 
 pcbs finally showed up. purple mask looks even better in person than the renders.
 decided to try paste this time instead of soldering every pad by hand. spread it on with a stencil-ish approach, took a bunch of progress shots because it was weirdly satisfying.
 
-![paste start](images/physical/paste_1.jpg)
-![paste mid](images/physical/paste_6.jpg)
-![paste done](images/physical/paste_12.jpg)
+![paste start](images/V1/paste_1.jpg)
+![paste mid](images/V1/paste_6.jpg)
+![paste done](images/V1/paste_12.jpg)
 
 placed everything while the paste was tacky. got a bridge between two pins on the ssop-28 ft232rl and one on a uln2003 (tssop-16), dragged those out with flux and wick. checked every pin under the magnifying glass after that.
 
@@ -207,12 +207,12 @@ after all that, plugged into the laptop and it enumerated straight away - lsusb 
 
 didnt get around to testing the esp auto-reset flashing yet, will do that next session. but the core of the board works which means the schematic wasnt garbage after all.
 
-![fuse bridged](images/physical/solder_fuse.jpg)
-![rework](images/physical/cut_trace_and_bridge.jpg)
-![lsusb](images/physical/detected_via_lsusb.jpg)
+![fuse bridged](images/V1/solder_fuse.jpg)
+![rework](images/V1/cut_trace_and_bridge.jpg)
+![lsusb](images/V1/detected_via_lsusb.jpg)
 
 video of the fuse bridge:
-[bridging the fuse](images/physical/bridge_fuse_with_tweezers.mp4)
+[bridging the fuse](images/V1/bridge_fuse_with_tweezers.mp4)
 
 **Total time spent: 4 hours**
 
@@ -225,7 +225,7 @@ lsusb picked up the ft232rl straight away - 0403:6001, ftdi_sio bound clean, fac
 while poking around i confirmed the vccio bug id suspected - io pins stay at 3.3v even with the switch flipped to 5v, worked fine until you actually use the switch. bodged a wire so vccio follows the switched rail. also caught the auto-reset stage latching: after the first trigger it held enable down until you pulled power. added a bodge resistor so it releases properly.
 
 characterized the power budget while i was in there (idle / leds all lit / data blasting) and dumped todays findings into the grant narrative. honestly the war stories section writes itself.
-![usb](images/physical/detected_via_lsusb.jpg)
+![usb](images/V1/detected_via_lsusb.jpg)
 
 **Total time spent: 3 hours**
 
@@ -247,6 +247,26 @@ final verdict: my board fully functional, cable good, port replaced, wiring corr
 
 oh and the host logs were spamming pcie correctable errors from the gpu slot all night. platform level electrical noise, worth watching.
 
-![viewport](images/blender-viewport1.png)
+![viewport](images/V1/blender-viewport1.png)
 
 **Total time spent: 5 hours**
+
+# September 1: v1.1 redesign
+
+went back to the schematic and cut a bunch of stuff out. the build worked but there was obvious fat to trim.
+
+the uln2003s are gone. i added em back in june as "cheap insurance" for buffering cbus outputs but honestly i never used them for anything and they were just dead weight eating board space and adding eight resistors plus four caps to the bom. open collector drivers sounded cool on paper but the leds and headers work straight off the ft232rl pins fine. deleted u4 and u5 and everything hanging off them.
+
+added a second fuse. f1 on vbus stays as the main overcurrent protection but i put a fine 2.5a 0603 polyfuse downstream of it. idea is one fuse catches gross shorts at the connector and the smaller one protects the actual rails a bit tighter. probably overkill but im clumsy and cheap insurance turned out to not be that cheap last time.
+
+also dropped in a 13th led, one more cbus indicator so every cbus pin is visible now.
+
+renamed the headers j4/j5 to j2/j3 while i was in there, the old numbering was just leftover nonsense from the original layout.
+
+then the killer part - rerouted the whole pcb. placement got a full shuffle which meant redoing most of the traces anyway, and i tidied up the ones that were ugly the first time. kept the 4-layer stackup because the planes make everything simpler. gerbers regenerated and the board file is way cleaner than v1.0.
+
+bonus: the whole netlist got revisited and the board was laid out fresh instead of bolting onto the old routing, so all the weird quirks i found while testing the v1.0 proto got a chance to be done right this time around.
+
+![pcb](images/V1-1/PCB.png)
+
+**Total time spent: 4 hours**
