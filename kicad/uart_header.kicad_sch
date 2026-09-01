@@ -914,7 +914,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a7f19f30-3a29-47ff-a24c-d24d723be873")
-		(property "Reference" "J4"
+		(property "Reference" "J2"
 			(at 64.77 29.2099 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -993,7 +993,7 @@
 		(instances
 			(project "FTDIboard"
 				(path "/aa1b40ca-4f8c-407d-ac45-3b99f0a9bdba/3abb35d5-16d8-4c38-b1b3-cd1430af0acd"
-					(reference "J4")
+					(reference "J2")
 					(unit 1)
 				)
 			)

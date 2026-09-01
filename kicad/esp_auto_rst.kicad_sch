@@ -1339,7 +1339,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3588dde8-bef8-4fe0-80d9-558dbdd29125")
-		(property "Reference" "R34"
+		(property "Reference" "R12"
 			(at 134.62 77.4699 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1403,7 +1403,7 @@
 		(instances
 			(project "FTDIboard"
 				(path "/aa1b40ca-4f8c-407d-ac45-3b99f0a9bdba/c80a0129-f13c-4535-bdeb-ba86d9ff1904"
-					(reference "R34")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -1531,7 +1531,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "42cb528e-4f52-4813-a6f2-6420426b1350")
-		(property "Reference" "R33"
+		(property "Reference" "R11"
 			(at 120.65 82.55 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1593,7 +1593,7 @@
 		(instances
 			(project "FTDIboard"
 				(path "/aa1b40ca-4f8c-407d-ac45-3b99f0a9bdba/c80a0129-f13c-4535-bdeb-ba86d9ff1904"
-					(reference "R33")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -1611,7 +1611,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "910239e4-45a5-4b88-8335-4d6c6564beb0")
-		(property "Reference" "J5"
+		(property "Reference" "J3"
 			(at 119.38 48.2599 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1681,7 +1681,7 @@
 		(instances
 			(project "FTDIboard"
 				(path "/aa1b40ca-4f8c-407d-ac45-3b99f0a9bdba/c80a0129-f13c-4535-bdeb-ba86d9ff1904"
-					(reference "J5")
+					(reference "J3")
 					(unit 1)
 				)
 			)
@@ -1699,7 +1699,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9f33fac2-d9fa-404a-95fa-6b689b508114")
-		(property "Reference" "C14"
+		(property "Reference" "C10"
 			(at 92.71 87.6362 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1763,7 +1763,7 @@
 		(instances
 			(project "FTDIboard"
 				(path "/aa1b40ca-4f8c-407d-ac45-3b99f0a9bdba/c80a0129-f13c-4535-bdeb-ba86d9ff1904"
-					(reference "C14")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -1891,7 +1891,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d3a70dd7-09bc-483e-8e10-7de3e61f19b6")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR014"
 			(at 101.6 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -1951,7 +1951,7 @@
 		(instances
 			(project "FTDIboard"
 				(path "/aa1b40ca-4f8c-407d-ac45-3b99f0a9bdba/c80a0129-f13c-4535-bdeb-ba86d9ff1904"
-					(reference "#PWR022")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -1969,7 +1969,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dead14d8-7ae8-4820-8bf5-e7a0fd8d0cad")
-		(property "Reference" "R31"
+		(property "Reference" "R9"
 			(at 67.31 82.55 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2031,7 +2031,7 @@
 		(instances
 			(project "FTDIboard"
 				(path "/aa1b40ca-4f8c-407d-ac45-3b99f0a9bdba/c80a0129-f13c-4535-bdeb-ba86d9ff1904"
-					(reference "R31")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -2049,7 +2049,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e34eab30-d50a-4fd1-b7ca-f3654cc82a07")
-		(property "Reference" "R32"
+		(property "Reference" "R10"
 			(at 81.28 76.1999 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2113,7 +2113,7 @@
 		(instances
 			(project "FTDIboard"
 				(path "/aa1b40ca-4f8c-407d-ac45-3b99f0a9bdba/c80a0129-f13c-4535-bdeb-ba86d9ff1904"
-					(reference "R32")
+					(reference "R10")
 					(unit 1)
 				)
 			)

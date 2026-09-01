@@ -1296,7 +1296,7 @@
 	)
 	(text "500-750mA"
 		(exclude_from_sim no)
-		(at 39.624 16.764 0)
+		(at 30.734 16.764 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1378,7 +1378,7 @@
 	)
 	(wire
 		(pts
-			(xy 41.91 25.4) (xy 45.72 25.4)
+			(xy 33.02 25.4) (xy 45.72 25.4)
 		)
 		(stroke
 			(width 0)
@@ -1398,7 +1398,7 @@
 	)
 	(wire
 		(pts
-			(xy 33.02 25.4) (xy 36.83 25.4)
+			(xy 24.13 25.4) (xy 27.94 25.4)
 		)
 		(stroke
 			(width 0)
@@ -1525,6 +1525,16 @@
 			(type default)
 		)
 		(uuid "7d69fecf-b402-48a7-9110-91f7fec247de")
+	)
+	(wire
+		(pts
+			(xy 50.8 25.4) (xy 54.61 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f6f6239-4e30-42dd-aa66-c1793465010a")
 	)
 	(wire
 		(pts
@@ -1658,7 +1668,7 @@
 	)
 	(global_label "VBUS_PROTECTED"
 		(shape input)
-		(at 45.72 25.4 0)
+		(at 54.61 25.4 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -1668,7 +1678,7 @@
 		)
 		(uuid "74df500b-d723-445d-9c80-7b54c75cab5d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 65.2151 25.4 0)
+			(at 74.1051 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1717,7 +1727,7 @@
 	)
 	(hierarchical_label "VBUS_IN"
 		(shape input)
-		(at 33.02 25.4 180)
+		(at 24.13 25.4 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -1783,7 +1793,7 @@
 	)
 	(symbol
 		(lib_id "Device:Polyfuse_Small")
-		(at 39.37 25.4 90)
+		(at 30.48 25.4 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -1794,7 +1804,7 @@
 		(fields_autoplaced yes)
 		(uuid "02438928-fa42-45eb-8e08-eeb482c6c041")
 		(property "Reference" "F1"
-			(at 39.37 19.05 90)
+			(at 30.48 19.05 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1804,7 +1814,7 @@
 			)
 		)
 		(property "Value" "600mA hold, 1.2A trip"
-			(at 39.37 21.59 90)
+			(at 30.48 21.59 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -1814,7 +1824,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm"
-			(at 44.45 24.13 0)
+			(at 35.56 24.13 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1826,7 +1836,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 39.37 25.4 0)
+			(at 30.48 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -1837,7 +1847,7 @@
 			)
 		)
 		(property "Description" "Resettable fuse, polymeric positive temperature coefficient, small symbol"
-			(at 39.37 25.4 0)
+			(at 30.48 25.4 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2338,6 +2348,87 @@
 			(project "FTDIboard"
 				(path "/aa1b40ca-4f8c-407d-ac45-3b99f0a9bdba/180d1957-f9a0-47cc-83f3-9f5e477c33e6"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Polyfuse_Small")
+		(at 48.26 25.4 90)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ca5bfae5-7d40-4e55-beaa-531ad5ed8d0b")
+		(property "Reference" "F2"
+			(at 48.26 19.05 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "2.5A"
+			(at 48.26 21.59 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Fuse_US_Handsoldering_AKL:Fuse_0603_1608Metric"
+			(at 53.34 24.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Datasheet" ""
+			(at 48.26 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resettable fuse, polymeric positive temperature coefficient, small symbol"
+			(at 48.26 25.4 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "91610262-2344-4821-8809-b0c901d68df4")
+		)
+		(pin "1"
+			(uuid "8ad65936-826b-458d-9053-168be9fde75d")
+		)
+		(instances
+			(project "FTDIboard"
+				(path "/aa1b40ca-4f8c-407d-ac45-3b99f0a9bdba/180d1957-f9a0-47cc-83f3-9f5e477c33e6"
+					(reference "F2")
 					(unit 1)
 				)
 			)
