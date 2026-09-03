@@ -72,4 +72,18 @@ FTDIboard is a compact USB-to-UART development interface with FT232RL, switchabl
 
 ---
 
+## Testing
+
+board is electrically proven. full details in `proof/PROOF.md`.
+
+- **self-loopback**: 500 x 512-byte blocks @ 115200 baud, 500/500 pass, 0 bad bytes
+- **pc loopback**: 100 x 32-byte chunks, 100/100 clean
+- **esp32 integration**: paced traffic (64b frames, single bytes) 100% clean
+- **stress test**: sustained 512b back-to-back blocks show intermittent bit flips (~40% of blocks) traced to marginal hookup wire (~12 ohm), not the board
+- **verdict**: board tx/rx driver integrity confirmed. wire is the problem, not the board.
+
+scripts in `proof/`: `board_selfloopback.py`, `customboard_bench.py`, `final_demo.py`, `diag_*.py`
+
+---
+
 *Full BOM available in BOM.csv*
