@@ -1,6 +1,6 @@
 # FTDIboard
 
-FTDIboard is a compact USB-to-UART development interface with FT232RL, switchable 3.3V/5V logic, ESP-style auto-reset, ESD protection, and status LEDs.
+FTDIboard is a small USB-to-UART interface with FT232RL with switchable 3.3V/5V logic.
 
 ---
 
@@ -8,11 +8,12 @@ FTDIboard is a compact USB-to-UART development interface with FT232RL, switchabl
 
 - FT232RL USB-to-UART bridge
 - Switchable 3.3V / 5V logic levels  
-- ESP-style auto-reset (DTR-based)
-- USB ESD protection (USBLC6)
-- Dual resettable fuses (PPTC): 600mA on VBUS + 2.5A fine fuse
-- Multiple status LEDs
-- Compact 75×50mm, 4-layer PCB
+- ESP-style auto-reset
+- USB ESD protection
+- Resettable Fuse (PPTC): 600mA on VBUS 
+- Fuse (not resettable): 2.5A fast fuse
+- Lots of LEDs
+- 75×50mm, 4-layer PCB
 - M3 mounting holes
 - 2.54mm standard headers
 
@@ -43,12 +44,15 @@ FTDIboard is a compact USB-to-UART development interface with FT232RL, switchabl
 | F1 | 1 | 600mA hold, 1.2A trip | Disc 5.1mm |
 | F2 | 1 | 2.5A trip | 0603 |
 | SW1 | 1 | SW_SPDT_321 | SPDT Slide switch |
+
+*Full BOM available in BOM.csv*
+
 ## Usage
 
 1. Connect via USB
 2. Install FTDI VCP drivers if needed
 3. Select serial port in your IDE
-4. Use with Arduino IDE, PlatformIO, PuTTY, etc.
+4. Have fun
 
 ---
 
@@ -74,16 +78,6 @@ FTDIboard is a compact USB-to-UART development interface with FT232RL, switchabl
 
 ## Testing
 
-board is electrically proven. full details in `proof/PROOF.md`.
-
-- **self-loopback**: 500 x 512-byte blocks @ 115200 baud, 500/500 pass, 0 bad bytes
-- **pc loopback**: 100 x 32-byte chunks, 100/100 clean
-- **esp32 integration**: paced traffic (64b frames, single bytes) 100% clean
-- **stress test**: sustained 512b back-to-back blocks show intermittent bit flips (~40% of blocks) traced to marginal hookup wire (~12 ohm), not the board
-- **verdict**: board tx/rx driver integrity confirmed. wire is the problem, not the board.
-
-scripts in `proof/`: `board_selfloopback.py`, `customboard_bench.py`, `final_demo.py`, `diag_*.py`
+board is proven. full details in `proof/PROOF.md`.
 
 ---
-
-*Full BOM available in BOM.csv*
