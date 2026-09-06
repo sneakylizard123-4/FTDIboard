@@ -9,13 +9,13 @@ created_at: "2026-06-21T02:59:14Z"
 
 # June 10: project start and component selection
 
-started the project. needed a usb-to-uart board for flashing esp32 and other mcus, got tired of borrowing from the lab. the lab ones are always either broken or being used by someone else anyway.
+started the project. wanted to build a usb-to-uart board for flashing esp32 and other mcus, got tired of using ones where i cant see the insides. the lab ones are always either broken or being used by someone else anyway.
 
 spent a while on the ic. ft232rl is old but its cheap and everyone has docs on it. looked at cp2102 too but the ft232rl has more cbus pins and full flow control so it wins for debugging. probably should have checked if its end of life yet but whatever, its everywhere so itll be fine.
 
-picked tlv75733 for 3.3v, switchable to 5v for the output. usblc6 for esd on the data lines. pptc fuse on the input because im clumsy and i dont want to fry a laptop usb port. usb-c because its 2026 obviously.
+picked tlv75733 for 3.3v because i have lots lying around, switchable to 5v for the output. usblc6 for esd on the data lines. pptc fuse on the input because im clumsy and i dont want to fry a laptop usb port. usb-c because its 2026, but i had a lot of those lying around too.
 
-wrote out the whole passive list too - 25x 10k, 4x 1k, a 100k, 2x 5.1k, 2x 33r, and the caps. all 0805. made the kicad project skeleton.
+wrote out the whole passive list too - 25x 10k, 4x 1k, a 100k, 2x 5.1k, 2x 33r, and the caps. all 0805 because i dont hate myself. made the kicad project skeleton.
 
 ![sch power](images/V1/SCH1.png)
 
@@ -27,7 +27,7 @@ did the power section first.
 
 usb-c with two 5.1k cc pulldowns so it acts as a device. took forever to get the orientation and cc1/cc2 wiring right, and figuring out which pins to tie for usb2.0. kept second guessing whether i needed the shield connected to gnd or through a resistor.
 
-esd protection with usblc6 between d+/d- and gnd. 33r series on each data line, sized the caps so the impedance stays in usb2.0 range. the differential impedance math took me a few tries but i think ive got it close enough, usb2.0 is forgiving.
+esd protection with usblc6 between d+/d- and gnd. 33r series on each data line, sized the caps so the impedance stays in usb2.0 range. the differential impedance math took me a few tries but i think ive got it close enough, usb2.0 is forgiving. if it doesnt work i can use different parts
 
 pptc on vbus with a 100nf right at the connector. ldo with 10uf in and out, plus a 4.7uf further down the rail. the slide switch picks between 3.3v and 5v.
 
@@ -47,7 +47,7 @@ decoupling caps on every power pin, right values on the internal reg output. wen
 
 hooked the status pins (txd rxd rts cts dtr dsr dcd ri) to the led network.
 
-then the esp auto-reset circuit with the two bc817s on dtr/rts. this was the worst part. the ide toggles dtr/rts to enter bootloader and the transistors have to pull esp enable and gpio0 at the right times. spent ages getting the polarity right so the reset sequence matches what esptool wants, 100k pullup on reset so it sits high by default. i read like three different forum posts about this before it clicked.
+then the esp auto-reset circuit with the two bc817s on dtr/rts. this was the worst part. the ide toggles dtr/rts to enter bootloader and the transistors have to pull esp enable and gpio0 at the right times. spent ages getting the polarity right so the reset sequence matches what esptool wants, 100k pullup on reset so it sits high by default. i read like three different forum posts about this before it clicked (wonderous foreshadowing here).
 
 ![sch core](images/V1/SCH2.png)
 
@@ -55,7 +55,7 @@ then the esp auto-reset circuit with the two bc817s on dtr/rts. this was the wor
 
 # June 14: schematic - leds and connectors
 
-finished the leds. 12 of them. 2 green for power, yellow for tx, blue for rx, 2 orange for flow control, red for dtr, 5 white for cbus. probably way more than i need but i like seeing what the chip is doing at a glance.
+finished the leds. 12 of them. 2 green for power, yellow for tx, blue for rx, 2 orange for flow control, red for dtr, 5 white for cbus. probably way more than i need but i like seeing what the chip is doing at a glance, plus leds=fun.
 
 each one gets a 1k series resistor so they run at like 2-3ma. had to redo the values per color since red/blue/green/yellow/white all have different forward voltages. the blues and whites are annoyingly bright even at low current so i might dial those back later.
 
@@ -273,19 +273,17 @@ bonus: the whole netlist got revisited and the board was laid out fresh instead 
 
 # September 2: proving the board actually works
 
-finally sat down and did the real tests. not "lsusb says hello" tests, actual bit-level stress proving the board is electrically sound.
+finally did the real tests. not "lsusb says hello" tests, actual bit-level stress proving the board is electrically sound.
 
-started with pure board self-loopback - jumpered tx to rx, esp32 completely disconnected, 500 blocks of 512 bytes at 115200 baud back to back. 500 out of 500 passed, zero bad bytes, 8.7 kB/s. that was the decisive test. 512 bytes was chosen on purpose because thats exactly the block size that triggers bit flips through the esp32 - if the board alone can push 512 bytes clean 500 times in a row, the tx/rx driver is fine.
+started with self-loopback, jumpered tx to rx, 500 blocks of 512 bytes at 115200 baud back to back. 500 out of 500 passed, zero bad bytes! 8.7 kB/s. that was the test. 512 bytes was chosen on purpose because thats exactly the block size that triggers bit flips through the esp32, if the board alone can push 512 bytes clean 500 times in a row, the tx/rx driver is fine. (in theorey)
 
 then did a direct pc loopback (board tx/rx jumpered, driven by the host) - 100x32 byte chunks, 100/100 clean. board + cable + pc port all proven in one shot.
 
 reconnected the esp32 for integration testing. light traffic (16 byte frames with 50ms gaps) passed 20/20. short frames under 64 bytes with even 100us gaps: 100% clean. single bytes: 300/300. the board talks to the esp32 just fine for normal paced uart traffic.
 
-then tried the stress case - sustained 512 byte back-to-back blocks to the esp32, no gaps. thats where ~40% of blocks showed exactly one bad byte with 1-2 single-bit flips. no frameshift, no desync, just `0x47->0x07` kind of stuff. bummer but at least its consistent.
-
-built a diagnostic suite to chase it down. `diag_txrx.py` isolated tx vs rx - when the board echo was clean but the esp mirror was corrupt, it proved the corruption happens on the board->esp wire. `diag_bits.py` did byte/bit-level analysis showing the first diverging byte matched between board echo and esp mirror, confirming the wire. `diag_rate.py` swept from paced to back-to-back and showed errors only appear under sustained load, ruling out esp32 buffer overflow (i had enlarged the rx buffer for nothing). `customboard_bench.py` did a full 1 mb stress run that predictably failed through the wire.
-
-wrapped it all up in `PROOF.md` and a two-phase demo script (`final_demo.py`) - phase a is the pure self-loopback, phase b is paced esp32 integration. both pass clean. the bottom line: the board is electrically sound, the intermittent bit flips are a marginal hookup wire / contact issue, not the board and not the esp32. the wire measures ~12 ohms on a twisted pair which explains everything.
+Issues:
+- esp auto reset circuit wired incorrectlly
+- vio trace too thin for esp32
 
 wrote all the findings into the grant narrative too. real engineering war stories beat smooth sailing every time.
 
