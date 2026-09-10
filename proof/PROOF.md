@@ -52,6 +52,11 @@ checks proved:
 So the flips exist only when the board drives the wire to the ESP32 -> **marginal hookup wire /
 contact**, consistent with the earlier-measured ~12 ohm twisted pair.
 
+## Media
+
+Videos from GoPro camera. Originals are 4-5K and several GB
+each, so the repo only contains compressed 1280px or 960px previews in `video/compressed/`.
+
 ## Files
 - Board self-loopback proof: `board_selfloopback.py`
 - 1 MB stress benchmark: `customboard_bench.py` (fails via wire, see sec.4)
