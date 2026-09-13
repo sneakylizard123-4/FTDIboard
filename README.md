@@ -2,6 +2,9 @@
 
 FTDIboard is a small USB-to-UART interface that uses the FT232RL and a switchable 3.3V/5V logic rail.
 
+## NOTE TO REVIEWER!!!
+iv rewritten this thing multiple times
+
 [Finished V1 board](proof/image/IMG_20260908_173817_623.jpg)
 
 ---
