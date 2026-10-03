@@ -2,10 +2,7 @@
 
 FTDIboard is a small USB-to-UART interface that uses the FT232RL and a switchable 3.3V/5V logic rail.
 
-## NOTE TO REVIEWER!!!
-iv rewritten this thing multiple times
-
-[Finished V1 board](proof/image/IMG_20260908_173817_623.jpg)
+[Finished V1 board](proof/V1/image/IMG_20260908_173817_623.jpg)
 
 ---
 
@@ -83,6 +80,10 @@ iv rewritten this thing multiple times
 
 ## Testing
 
-board is proven. full details in `proof/PROOF.md`.
+v1.1 board built and tested, self-loopback passes clean. the two v1.0 bugbear fixes
+(auto-reset latch, VCCIO following the switch) are confirmed gone in this revision.
+
+- v1.1 build + test proof: `proof/V1-1/PROOF.md`
+- v1.0 electrical soundness proof: `proof/V1/PROOF.md`
 
 ---
