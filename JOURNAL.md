@@ -312,7 +312,6 @@ wrote all the findings into the grant narrative too. real engineering war storie
 once the bridge was in, all the leds lit up and stayed lit - nicest possible first reaction from a board.
 
 ![board](proof/V1-1/image/IMG_20260921_185508_130.jpg)
-![board](proof/V1-1/image/IMG_20260921_185721_778.jpg)
 
 **Total time spent: 3 hours**
 
@@ -334,6 +333,9 @@ once the bridge was in, all the leds lit up and stayed lit - nicest possible fir
 ## Screenshots
 
 [test script running](proof/V1-1/video/VID_20260921_190001.mp4)
+
+![board](proof/V1-1/image/IMG_20260921_185721_778.jpg)
+
 
 board sat there doing the full self loopback pass clean. the fixes from the redesign actually fixed things and not just the drawing. v1.1 works.
 
