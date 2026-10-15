@@ -7,23 +7,68 @@ created_at: "2026-06-21T02:59:14Z"
 
 # September 1: v1.1 redesign
 
-went back to the schematic and cut a bunch of stuff out. the build worked but there was obvious fat to trim.
+## What I did
 
-the uln2003s are gone. i added em back in june as "cheap insurance" for buffering cbus outputs but honestly i never used them for anything and they were just dead weight eating board space and adding eight resistors plus four caps to the bom. open collector drivers sounded cool on paper but the leds and headers work straight off the ft232rl pins fine. deleted u4 and u5 and everything hanging off them.
+- Removed ULN2003s
+- Added second 2.5a pulyfuse
+- added another led
+- reassigned designators
+- fresh pcb design
 
-added a second fuse. f1 on vbus stays as the main overcurrent protection but i put a fine 2.5a 0603 polyfuse downstream of it. idea is one fuse catches gross shorts at the connector and the smaller one protects the actual rails a bit tighter. probably overkill but im clumsy and cheap insurance turned out to not be that cheap last time.
+## Why
 
-also dropped in a 13th led, one more cbus indicator so every cbus pin is visible now.
+- ULN2003s weren't needed for cbus, FT232 was enough
+- 2.5a just in case something goes really wrong
+- all cbus pins have leds on them now
+- tidied traces from last board more straightforeward layout
 
-renamed the headers j4/j5 to j2/j3 while i was in there, the old numbering was just leftover nonsense from the original layout.
-
-then the killer part - rerouted the whole pcb. placement got a full shuffle which meant redoing most of the traces anyway, and i tidied up the ones that were ugly the first time. kept the 4-layer stackup because the planes make everything simpler. gerbers regenerated and the board file is way cleaner than v1.0.
-
-bonus: the whole netlist got revisited and the board was laid out fresh instead of bolting onto the old routing, so all the weird quirks i found while testing the v1.0 proto got a chance to be done right this time around.
+## Screenshots
 
 ![pcb](images/V1-1/PCB.png)
 
 **Total time spent: 4 hours**
+
+# September 3: ordering the v1.1 board
+
+## What I did
+
+- the redesign was done so i hit the buy buttons
+- re-exported the fab files (gerbers, drills, pick and place) from the rerouted pcb
+- sorted the new lcsc parts list - uln2003s gone, fuse and 13th led in, resistor count dropped from 34 to 25
+- uploaded the gerbers to jlcpcb and put in the parts order at the same time so they should land around the same week
+
+## Why
+
+- the aug 22 build taught me the fuse is a pain, so the 2.5a polyfuse placement got a second look before ordering
+- wanted the bom to match the redesign exactly - last time stock ran out on the cheap caps mid-order
+
+## Screenshots
+
+![v1.1 pcb render](images/V1-1/PCB.png)
+
+**Total time spent: 2 hours**
+
+# September 12: more v1.0 proof while the new boards ship
+
+## What I did
+
+- the v1.1 pcbs were in transit so i went back and hammered the v1.0 board some more
+- reran the full proof kit on it again: self-loopback, paced esp32 traffic, and the sustained 512-byte stress case
+- grabbed proper go-pro footage of the whole run instead of just screenshots, so the proof is on film
+- re-confirmed the vccio bodge and auto-reset latch are both still working as the workarounds, nothing drifted
+
+## Why
+
+- the more runs on v1.0, the better baseline I have to judge v1.1 against when it lands
+- the esp32 stress case (512 byte blocks) was the one that bit-flips through the wire, wanted it documented properly on v1.0 before comparing
+
+## Screenshots
+
+[v1.0 proof video](proof/V1/video/compressed/GX011369.mp4)
+
+![v1.0 probe setup](proof/V1/image/IMG_20260908_173817_623.jpg)
+
+**Total time spent: 3 hours**
 
 # September 21: v1.1 boards arrived, built
 
