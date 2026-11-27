@@ -4,6 +4,10 @@ FTDIboard is a small USB-to-UART interface that uses the FT232RL and a switchabl
 
 [Finished V1 board](proof/V1/image/IMG_20260908_173817_623.jpg)
 
+## Why I Built This
+
+I wanted a USB-to-UART adapter that I could understand, repair, and use for debugging instead of another closed adapter with no visibility into what it was doing. The shared adapters in the lab were also often broken or already in use, so I built my own with USB protection, selectable logic levels, ESP auto-reset, and LEDs that show what the FT232RL is doing. This v1.1 revision keeps that idea but removes the parts I did not use and fixes the issues found while testing v1.0.
+
 ---
 
 ## Key Features
@@ -13,7 +17,7 @@ FTDIboard is a small USB-to-UART interface that uses the FT232RL and a switchabl
 - ESP-style auto-reset
 - USB ESD protection
 - Resettable Fuse (PPTC): 600mA on VBUS 
-- Fuse (not resettable): 2.5A fast fuse
+- Second resettable fuse: 2.5A polyfuse
 - Lots of LEDs
 - 75×50mm, 4-layer PCB
 - M3 mounting holes
@@ -49,12 +53,25 @@ FTDIboard is a small USB-to-UART interface that uses the FT232RL and a switchabl
 
 *Full BOM available in BOM.csv*
 
-## Usage
+## Fabrication Files
 
-1. Connect via USB
-2. Install FTDI VCP drivers if needed
-3. Select serial port in your IDE
-4. Have fun
+The current **v1.1** manufacturing outputs are included, so you do not need KiCad just to order the board:
+
+- [Ready-to-upload Gerber ZIP](kicad/production/FTDIboard.zip)
+- [Individual Gerber and drill files](kicad/production/gerbers/)
+- [Native KiCad project](kicad/FTDIboard.kicad_pro)
+
+Order a **75 x 50 mm, 4-layer, 1.6 mm PCB with 1 oz copper**. The package includes all four copper layers, solder mask, silkscreen, paste, board outline, and separate PTH/NPTH Excellon drill files. The `JLCPCB/` and `PCBWAY/` subdirectories contain older v1.0 exports; use the main `FTDIboard.zip` or `gerbers/` directory above for this revision.
+
+## Building and Setting Up the Board
+
+1. **Order the board and parts.** Upload the v1.1 Gerber ZIP to your PCB manufacturer and use [BOM.csv](BOM.csv) for the components and LCSC part numbers. The editable schematic and PCB source are in [`kicad/`](kicad/).
+2. **Assemble the board.** Follow the schematic, BOM, and reference designators on the PCB. Check pin 1 on the ICs, transistor orientation, and LED polarity. Install both F1 and F2; do not replace them with solder bridges or wire links.
+3. **Check it before applying power.** Inspect for solder bridges, especially around the SSOP-28 FT232RL, and use a multimeter to check for shorts between VBUS and GND and between VIO and GND.
+4. **Select the logic voltage.** Set SW1 to 3.3V or 5V before connecting a target. VIO follows this switch on v1.1. Use **3.3V for ESP32/ESP8266 devices**; only use 5V with targets whose UART pins are 5V tolerant.
+5. **Connect USB and check the port.** Connect a USB-C cable to the host. Most current Linux, Windows, and macOS systems already support the FT232RL as a virtual COM port. If no serial port appears, install the [FTDI VCP driver](https://ftdichip.com/drivers/vcp-drivers/). On Linux, the board normally appears as `/dev/ttyUSB0` or another `/dev/ttyUSBx` device.
+6. **Wire the target.** J2 carries TXD, RXD, DTR, RTS, CTS, VIO, and GND. Connect board TXD to target RXD, board RXD to target TXD, and always connect GND to GND. Connect DTR and RTS as well when using the ESP auto-reset circuit. Use the schematic and board silkscreen to identify the pins.
+7. **Test before flashing a project.** Select the new serial port in your terminal or IDE at the target's baud rate. For a basic self-test, disconnect the target, jumper TXD to RXD, disable local echo in the terminal, and confirm that typed characters are returned. The test scripts and recorded results are in [`proof/V1/`](proof/V1/) and [`proof/V1-1/`](proof/V1-1/).
 
 ---
 

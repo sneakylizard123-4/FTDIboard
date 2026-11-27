@@ -108,3 +108,7 @@ kicad/_restore_backup_*/
 proof/V1/video/*.MP4
 proof/V1/video/*.LRV
 proof/V1/video/*.THM
+
+# Keep the v1.1 fabrication outputs
+!kicad/production/gerbers/
+!kicad/production/gerbers/*
